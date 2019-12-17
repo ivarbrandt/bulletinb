@@ -9,7 +9,7 @@ module.exports = app => {
     AchievementController.updateAchievement
   );
   app.delete(
-    "/api/achievements/remove/:id",
+    "/api/achievements/delete/:id",
     AchievementController.deleteAchievement
   );
   app.get("/api/families", FamilyController.allFamilies);
