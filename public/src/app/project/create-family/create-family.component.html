@@ -1,1 +1,24 @@
-<p>create-family works!</p>
+<div class="container">
+  <h1 class="text-center">Create a Family</h1>
+  <form>
+    <div class="form-group">
+      <label>
+        Family Name:
+        <input
+          class="form-control"
+          type="text"
+          name="name"
+          placeholder="e.g. The Johnsons"
+          [(ngModel)]="newFamily.name"
+        />
+      </label>
+      <button
+        style="margin-left: 20px;"
+        class="btn btn-success"
+        (click)="createFamily()"
+      >
+        Create
+      </button>
+    </div>
+  </form>
+</div>

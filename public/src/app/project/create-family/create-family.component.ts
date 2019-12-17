@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
 import { Family } from "src/app/models/family.interface";
+import { ProjectService } from "src/app/project.service";
+import { ActivatedRoute, Params, Router } from "@angular/router";
 
 @Component({
   selector: "app-create-family",
@@ -8,5 +10,16 @@ import { Family } from "src/app/models/family.interface";
 })
 export class CreateFamilyComponent {
   newFamily: Family = { name: "" };
-  constructor() {}
+  constructor(
+    private projectService: ProjectService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
+  createFamily() {
+    this.projectService.createFamily(this.newFamily).subscribe(data => {
+      console.log(data);
+      this.newFamily = { name: "" };
+      this.router.navigate(["/families/join"]);
+    });
+  }
 }
