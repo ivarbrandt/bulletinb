@@ -1,6 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { ProjectService } from "./project.service";
+import { ProjectService } from "./services/project.service";
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -9,9 +9,10 @@ import { JoinOrCreateFamilyComponent } from './project/join-or-create-family/joi
 import { MainFamilyBoardComponent } from './project/main-family-board/main-family-board.component';
 import { RootfamilyComponent } from './project/rootfamily/rootfamily.component';
 import { CreateFamilyComponent } from './project/create-family/create-family.component';
+import { MainPageComponent } from './project/main-page/main-page.component';
 
 @NgModule({
-  declarations: [AppComponent, JoinOrCreateFamilyComponent, MainFamilyBoardComponent, RootfamilyComponent, CreateFamilyComponent],
+  declarations: [AppComponent, JoinOrCreateFamilyComponent, MainFamilyBoardComponent, RootfamilyComponent, CreateFamilyComponent, MainPageComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [ProjectService],
   bootstrap: [AppComponent]

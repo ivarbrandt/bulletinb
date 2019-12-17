@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { User } from "src/app/models/user.interface";
 import { Family } from "src/app/models/family.interface";
-import { Achievement } from "./models/achievement.interface";
+import { Achievement } from "../models/achievement.interface";
 
 @Injectable({
   providedIn: "root"
