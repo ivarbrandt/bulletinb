@@ -45,8 +45,8 @@ export class ProjectService {
   getOneUser(id: string) {
     return this.http.get<User>(`/api/users/${id}`)
   }
-  createUser() {
-    return this.http.post<User>('/api/users/new')
+  createUser(user: User) {
+    return this.http.post<User>('/api/users/new', user)
 
   }
   updateUser(user: User) {
