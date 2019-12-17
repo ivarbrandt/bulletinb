@@ -1,4 +1,6 @@
 const { User } = require("../models/user.model");
+const bcrypt = require("bcrypt")
+
 module.exports.getAllUsers = (req, res) => {
   User.find()
     .then(allUsers => res.json(allUsers))
@@ -24,4 +26,15 @@ module.exports.createUser = (req, res) => {
     .then(user => res.json(user))
     .catch(err => res.json(err));
 };
-
+module.exports.login = (req, res) => {
+  User.findOne({ email: req.body.email })
+    .then(user => {
+      if (bcrypt.compareSync(req.body.password, user.password)) {
+        return res.json(user);
+      }
+      else {
+          throw new Error("Wrong password. Get fucked. Joe Mama. ;)")
+      }
+    })
+    .catch(err => res.json(err));
+};
