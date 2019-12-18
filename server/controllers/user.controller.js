@@ -27,13 +27,12 @@ module.exports.createUser = (req, res) => {
     .catch(err => res.json(err));
 };
 module.exports.login = (req, res) => {
-  User.findOne({ email: req.body.email }, function(err, user) {
-    if (err) throw err;
-    user.comparePassword(req.body);
-  });
-  user
-    .comparePassword(req.body.password, function(err, isMatch) {
-      if (err) throw err;
+  User.findOne({ email: req.body.email })
+    .then(user => {
+      user.comparePassword(req.body.password, (err, isMatch) => {
+        if (err) return res.json(err);
+        else res.json(user);
+      });
     })
     .catch(err => res.json(err));
 };
