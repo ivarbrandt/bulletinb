@@ -1,14 +1,15 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { User } from "src/app/models/user.interface";
 import { ProjectService } from "src/app/services/project.service";
 import { ActivatedRoute, Router } from "@angular/router";
+import { AuthService } from "src/app/services/auth.service";
 
 @Component({
   selector: "app-register",
   templateUrl: "./register.component.html",
   styleUrls: ["./register.component.scss"]
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
   newUser: User = {
     first_name: "",
     last_name: "",
@@ -16,22 +17,26 @@ export class RegisterComponent {
     password: "",
     dob: new Date()
   };
+  users: User[] = [];
   constructor(
     private projectService: ProjectService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) {}
-  createUser() {
-    this.projectService.createUser(this.newUser).subscribe(data => {
-      console.log(data);
-      this.newUser = {
-        first_name: "",
-        last_name: "",
-        email: "",
-        password: "",
-        dob: new Date()
-      };
+  ngOnInit() {
+    this.projectService.getAllUsers().subscribe(data => {
+      this.users = data;
     });
-    this.router.navigate(["/home"]);
+  }
+  createUser() {
+    this.authService.createUser(this.newUser);
+  }
+  deleteUser(id: string) {
+    this.projectService.deleteUser(id).subscribe(data => {
+      this.projectService.getAllUsers().subscribe(data => {
+        this.users = data;
+      });
+    });
   }
 }
