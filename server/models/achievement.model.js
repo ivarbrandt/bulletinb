@@ -6,7 +6,8 @@ const AchievementSchema = new mongoose.Schema(
     description: { type: String, required: true },
     date: { type: Date, required: true },
     length_of_time: { type: String, required: true },
-    image_url: String
+    image_url: String,
+    month: String
   },
   { timestamps: true }
 );

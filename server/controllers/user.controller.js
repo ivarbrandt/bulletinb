@@ -27,13 +27,13 @@ module.exports.createUser = (req, res) => {
     .catch(err => res.json(err));
 };
 module.exports.login = (req, res) => {
-  User.findOne({ email: req.body.email })
-    .then(user => {
-      if (bcrypt.compareSync(req.body.password, user.password)) {
-        return res.json(user);
-      } else {
-        throw new Error("Wrong password. Get fucked. Joe Mama. ;)");
-      }
+  User.findOne({ email: req.body.email }, function(err, user) {
+    if (err) throw err;
+    user.comparePassword(req.body);
+  });
+  user
+    .comparePassword(req.body.password, function(err, isMatch) {
+      if (err) throw err;
     })
     .catch(err => res.json(err));
 };

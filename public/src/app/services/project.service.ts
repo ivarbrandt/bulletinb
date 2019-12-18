@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { User } from "src/app/models/user.interface";
 import { Family } from "src/app/models/family.interface";
 import { Achievement } from "../models/achievement.interface";
+import { Login } from "../models/login.interface";
 
 @Injectable({
   providedIn: "root"
@@ -54,7 +55,7 @@ export class ProjectService {
   deleteUser(id: string) {
     return this.http.delete<User>(`/api/users/${id}`);
   }
-  loginUser(user) {
-    return this.http.post("/api/users/login", user);
+  loginUser(user: Login) {
+    return this.http.post<User>("/api/users/login", user);
   }
 }

@@ -8,4 +8,5 @@ export interface Achievement {
   _id?: string;
   createdAt?: Date;
   updatedAt?: Date;
+  month: string;
 }
