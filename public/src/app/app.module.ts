@@ -10,9 +10,11 @@ import { MainFamilyBoardComponent } from './project/main-family-board/main-famil
 import { RootfamilyComponent } from './project/rootfamily/rootfamily.component';
 import { CreateFamilyComponent } from './project/create-family/create-family.component';
 import { MainPageComponent } from './project/main-page/main-page.component';
+import { RegisterComponent } from './loginandreg/register/register.component';
+import { LoginComponent } from './loginandreg/login/login.component';
 
 @NgModule({
-  declarations: [AppComponent, JoinOrCreateFamilyComponent, MainFamilyBoardComponent, RootfamilyComponent, CreateFamilyComponent, MainPageComponent],
+  declarations: [AppComponent, JoinOrCreateFamilyComponent, MainFamilyBoardComponent, RootfamilyComponent, CreateFamilyComponent, MainPageComponent, RegisterComponent, LoginComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [ProjectService],
   bootstrap: [AppComponent]

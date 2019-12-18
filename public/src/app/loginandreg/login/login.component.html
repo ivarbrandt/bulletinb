@@ -1,0 +1,27 @@
+<div class="containter">
+  <form>
+    <div class="form-group">
+      <label>
+        Email:
+        <input
+          class="form-control"
+          type="text"
+          name="email"
+          [(ngModel)]="selectedUser.email"
+        />
+      </label>
+    </div>
+    <div class="form-group">
+      <label>
+        Password:
+        <input
+          class="form-control"
+          type="text"
+          name="password"
+          [(ngModel)]="selectedUser.password"
+        />
+      </label>
+    </div>
+    <button (click)="loginUser()">Login</button>
+  </form>
+</div>
