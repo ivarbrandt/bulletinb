@@ -1,5 +1,5 @@
 const { User } = require("../models/user.model");
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcrypt");
 
 module.exports.getAllUsers = (req, res) => {
   User.find()
@@ -31,9 +31,8 @@ module.exports.login = (req, res) => {
     .then(user => {
       if (bcrypt.compareSync(req.body.password, user.password)) {
         return res.json(user);
-      }
-      else {
-          throw new Error("Wrong password. Get fucked. Joe Mama. ;)")
+      } else {
+        throw new Error("Wrong password. Get fucked. Joe Mama. ;)");
       }
     })
     .catch(err => res.json(err));

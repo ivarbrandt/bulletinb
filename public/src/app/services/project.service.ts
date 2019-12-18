@@ -40,22 +40,21 @@ export class ProjectService {
     return this.http.delete<Achievement>(`/api/achievements/delete/${id}`);
   }
   getAllUsers() {
-    return this.http.get<User[]>('/api/users')
+    return this.http.get<User[]>("/api/users");
   }
   getOneUser(id: string) {
-    return this.http.get<User>(`/api/users/${id}`)
+    return this.http.get<User>(`/api/users/${id}`);
   }
   createUser(user: User) {
-    return this.http.post<User>('/api/users/new', user)
-
+    return this.http.post<User>("/api/users/new", user);
   }
   updateUser(user: User) {
-    return this.http.put<User>(`/api/users/update/${user._id}`, user)
+    return this.http.put<User>(`/api/users/update/${user._id}`, user);
   }
   deleteUser(id: string) {
-    return this.http.delete<User>(`/api/users/${id}`)
+    return this.http.delete<User>(`/api/users/${id}`);
   }
   loginUser(user) {
-    return this.http.post('/api/users/login', user)
+    return this.http.post("/api/users/login", user);
   }
 }
