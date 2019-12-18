@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { Family } from "src/app/models/family.interface";
-import { ProjectService } from "src/app/project.service";
+import { ProjectService } from "src/app/services/project.service";
 import { ActivatedRoute, Params, Router } from "@angular/router";
 
 @Component({
