@@ -6,6 +6,7 @@ import { CreateFamilyComponent } from "./project/create-family/create-family.com
 import { MainPageComponent } from "./project/main-page/main-page.component";
 import { RegisterComponent } from "./loginandreg/register/register.component";
 import { LoginComponent } from "./loginandreg/login/login.component";
+import { CreateAchievementComponent } from './create-achievement/create-achievement.component';
 
 const routes: Routes = [
   { path: "home", component: MainPageComponent },
@@ -18,7 +19,8 @@ const routes: Routes = [
       { path: "join", component: JoinOrCreateFamilyComponent },
       { path: "new", component: CreateFamilyComponent }
     ]
-  }
+  },
+  { path: "create", component: CreateAchievementComponent}
 ];
 
 @NgModule({

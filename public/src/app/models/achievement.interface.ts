@@ -3,11 +3,10 @@ export interface Achievement {
   title: string;
   description: string;
   date: Date;
-  length_of_time: string;
+  unit_of_time: string;
+  length_of_time: number;
   image_url?: string;
   _id?: string;
-  month: string;
   createdAt?: Date;
   updatedAt?: Date;
-  month: string;
 }

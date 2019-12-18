@@ -12,9 +12,10 @@ import { CreateFamilyComponent } from './project/create-family/create-family.com
 import { MainPageComponent } from './project/main-page/main-page.component';
 import { RegisterComponent } from './loginandreg/register/register.component';
 import { LoginComponent } from './loginandreg/login/login.component';
+import { CreateAchievementComponent } from './create-achievement/create-achievement.component';
 
 @NgModule({
-  declarations: [AppComponent, JoinOrCreateFamilyComponent, MainFamilyBoardComponent, RootfamilyComponent, CreateFamilyComponent, MainPageComponent, RegisterComponent, LoginComponent],
+  declarations: [AppComponent, JoinOrCreateFamilyComponent, MainFamilyBoardComponent, RootfamilyComponent, CreateFamilyComponent, MainPageComponent, RegisterComponent, LoginComponent, CreateAchievementComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [ProjectService],
   bootstrap: [AppComponent]
