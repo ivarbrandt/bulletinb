@@ -7,9 +7,9 @@ import { Route } from "@angular/compiler/src/core";
 import { AuthService } from "src/app/services/auth.service";
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: "app-login",
+  templateUrl: "./login.component.html",
+  styleUrls: ["./login.component.scss"]
 })
 
 

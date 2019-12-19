@@ -17,7 +17,7 @@ export class CreateAchievementComponent implements OnInit {
     category: "",
     title: "",
     description: "",
-    date: new Date(),
+    image_url: "",
     unit_of_time: "days",
     length_of_time: 0
   };
@@ -36,13 +36,13 @@ export class CreateAchievementComponent implements OnInit {
   createAchievement() {
     this.projectService
       .createAchievement(this.user._id, this.newAch)
-      .subscribe(newach => {
-        this.achievements.push(newach);
+      .subscribe(data => {
+        this.achievements.push(data);
         this.newAch = {
           category: "",
           title: "",
+          image_url: "",
           description: "",
-          date: new Date(),
           unit_of_time: "days",
           length_of_time: 0
         };
